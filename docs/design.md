@@ -6,7 +6,7 @@ static.js is a minimalist framework that can be used to orchestrate navigation a
 
 ## rules
 
-* the static compiler should pack all data to js, that way there's more flexibility in rendering views, need to evaluate the memory costs compared to storing things in html
+* the static compiler should pack all data to js, that way there's more flexibility in rendering views, need to evaluate the memory costs compared to storing things in html (after evaluating this, there are large data sets that often get stored into js from rest calls so js engines should be able to handle this just fine).  after evaluating this, the template format allows massive flexibility in not having to structure all code in js, adding tags and html elements while not difficult in js, requires too much coding, i don't think the audience for static should have to do this.  so code should be kept in amber templates, this provides the most flexibility for page layout.  instead, pages should be scraped for the data contents.  however, in order to simplify things, there could be some data structures stored in js, like an index of all articles, timestamps which will most likely need to be converted to friendly times.
 * since all articles are embedded in a single page (index.html), there needs to be a way to navigate via hashtags to each article.  this unique hashtag/id would simply be a 32 character hash of the content
 * since the view needs to be manipulated by client side code, there is a short duration of time for the rendering to take place, there should be a simple landing page to cover up this duration
 * there is an id called `main` which shows a list of all the article links and can show a brief synopsis of the article
